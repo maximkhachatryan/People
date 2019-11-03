@@ -19,15 +19,12 @@
                         Email = c.String(maxLength: 240),
                         CrDate = c.DateTime(nullable: false),
                     })
-                .PrimaryKey(t => t.PID)
-                .Index(t => t.PID, clustered: true, name: "PK_Folks");
+                .PrimaryKey(t => t.PID);
             Sql("ALTER TABLE dbo.People ADD CONSTRAINT DF_Folks_CrDate DEFAULT GETDATE() FOR CrDate");
-
         }
         
         public override void Down()
         {
-            DropIndex("dbo.People", "PK_Folks");
             DropTable("dbo.People");
         }
     }

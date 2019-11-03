@@ -13,7 +13,7 @@ namespace People.DAL.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "201911031213272_InitialCreate"; }
+            get { return "201911031303563_InitialCreate"; }
         }
         
         string IMigrationMetadata.Source

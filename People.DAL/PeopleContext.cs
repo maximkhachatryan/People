@@ -12,7 +12,7 @@ namespace People.DAL
     public class PeopleContext : DbContext
     {
         public PeopleContext()
-            : base("PeopleConnString")
+            : base("Name=PeopleConnString")
         {
             Configuration.LazyLoadingEnabled = true;
         }
@@ -20,7 +20,7 @@ namespace People.DAL
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Person>().HasKey(x => x.Id);
+            //modelBuilder.Entity<Person>().HasKey(x => x.Id);
             modelBuilder.Entity<Person>().Property(x => x.Id).HasColumnName("PID");
 
             modelBuilder.Entity<Person>().Property(x => x.FirstName)
@@ -37,9 +37,6 @@ namespace People.DAL
 
             modelBuilder.Entity<Person>().Property(x => x.Email)
                 .HasMaxLength(240);
-
-
-            modelBuilder.Entity<Person>().HasIndex(x => x.Id).IsClustered().HasName("PK_Folks");
 
             base.OnModelCreating(modelBuilder);
         }
