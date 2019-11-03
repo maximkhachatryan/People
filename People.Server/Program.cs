@@ -16,13 +16,13 @@ namespace People.Server
         static void Main(string[] args)
         {
             var builder = new ContainerBuilder();
-            builder.RegisterType<PeopleService>();
+            builder.RegisterType<FolksService>();
             builder.RegisterType<PeopleUnitOfWork>().As<IPeopleUnitOfWork>().SingleInstance();
 
             using (var container = builder.Build())
             {
-                var host = new ServiceHost(typeof(PeopleService));
-                host.AddDependencyInjectionBehavior<PeopleService>(container);
+                var host = new ServiceHost(typeof(FolksService));
+                host.AddDependencyInjectionBehavior<FolksService>(container);
                 host.Open();
 
                 Console.WriteLine("Press <Any Key> for exit.");

@@ -11,10 +11,10 @@ using People.Server.DataContracts;
 namespace People.Server.ServiceContracts.Implementations
 {
     [ServiceBehavior(InstanceContextMode = InstanceContextMode.PerSession)]
-    class PeopleService : IPeopleContract
+    class FolksService : IFolksContract
     {
         readonly IPeopleUnitOfWork _unitOfWork;
-        public PeopleService(IPeopleUnitOfWork unitOfWork)
+        public FolksService(IPeopleUnitOfWork unitOfWork)
         {
             _unitOfWork = unitOfWork;
         }
@@ -28,8 +28,9 @@ namespace People.Server.ServiceContracts.Implementations
                 Notes = person.Notes,
                 Email = person.Email,
                 Phone = person.Phone,
-                CrDate = person.CrDate
+                CrDate = DateTime.Now
             });
+            _unitOfWork.Complete();
         }
     }
 }

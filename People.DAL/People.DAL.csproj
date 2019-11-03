@@ -53,9 +53,9 @@
   <ItemGroup>
     <Compile Include="Entities\EntityBase.cs" />
     <Compile Include="Entities\Person.cs" />
-    <Compile Include="Migrations\201911031303563_InitialCreate.cs" />
-    <Compile Include="Migrations\201911031303563_InitialCreate.designer.cs">
-      <DependentUpon>201911031303563_InitialCreate.cs</DependentUpon>
+    <Compile Include="Migrations\201911032020125_InitialCreate.cs" />
+    <Compile Include="Migrations\201911032020125_InitialCreate.designer.cs">
+      <DependentUpon>201911032020125_InitialCreate.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="PeopleContext.cs" />
@@ -70,8 +70,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201911031303563_InitialCreate.resx">
-      <DependentUpon>201911031303563_InitialCreate.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201911032020125_InitialCreate.resx">
+      <DependentUpon>201911032020125_InitialCreate.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

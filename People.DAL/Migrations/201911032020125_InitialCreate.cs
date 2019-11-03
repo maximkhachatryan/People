@@ -8,7 +8,7 @@
         public override void Up()
         {
             CreateTable(
-                "dbo.People",
+                "dbo.Folks",
                 c => new
                     {
                         PID = c.Int(nullable: false, identity: true),
@@ -17,15 +17,15 @@
                         Notes = c.String(maxLength: 2400),
                         Phone = c.String(maxLength: 240),
                         Email = c.String(maxLength: 240),
-                        CrDate = c.DateTime(nullable: false),
+                        CrDate = c.DateTime(nullable: false, precision: 7, storeType: "datetime2"),
                     })
                 .PrimaryKey(t => t.PID);
-            Sql("ALTER TABLE dbo.People ADD CONSTRAINT DF_Folks_CrDate DEFAULT GETDATE() FOR CrDate");
+            
         }
         
         public override void Down()
         {
-            DropTable("dbo.People");
+            DropTable("dbo.Folks");
         }
     }
 }

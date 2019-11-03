@@ -10,7 +10,7 @@ namespace People.Server.ServiceContracts
 {
 
     [ServiceContract]
-    public interface IPeopleContract
+    public interface IFolksContract
     {
 
         [OperationContract]

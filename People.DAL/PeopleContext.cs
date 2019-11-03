@@ -20,6 +20,9 @@ namespace People.DAL
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
+            modelBuilder.Properties<DateTime>().Configure(c => c.HasColumnType("datetime2"));
+            modelBuilder.Entity<Person>().ToTable("Folks");
+
             //modelBuilder.Entity<Person>().HasKey(x => x.Id);
             modelBuilder.Entity<Person>().Property(x => x.Id).HasColumnName("PID");
 
