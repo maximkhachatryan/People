@@ -35,6 +35,7 @@ namespace People.DAL.Services
 
         public void Create(TEntity item)
         {
+            item.Validate();
             _dbSet.Add(item);
         }
         public bool Remove(TEntity item)

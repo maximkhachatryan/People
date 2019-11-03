@@ -8,7 +8,7 @@ namespace People.DAL.Entities
 {
     public abstract class EntityBase
     {
-        public Guid Id { get; set; }
+        public int Id { get; set; }
         public virtual void Validate() { }
     }
 }
