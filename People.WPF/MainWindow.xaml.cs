@@ -35,11 +35,12 @@ namespace People.WPF
             _service.Insert(new PersonDTO
             {
                 FirstName = txtFirstName.Text,
-                LastName=txtLastName.Text,
-                Notes=txtNotes.Text,
-                Email=txtEmail.Text,
-                Phone=txtPhone.Text
+                LastName = txtLastName.Text,
+                Notes = txtNotes.Text,
+                Email = txtEmail.Text,
+                Phone = txtPhone.Text
             });
+            MessageBox.Show("Inserted!");
         }
     }
 }
