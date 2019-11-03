@@ -51,6 +51,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entities\EntityBase.cs" />
     <Compile Include="Entities\Person.cs" />
     <Compile Include="Migrations\201911031303563_InitialCreate.cs" />
     <Compile Include="Migrations\201911031303563_InitialCreate.designer.cs">
@@ -59,6 +60,8 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="PeopleContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\PeopleRepository.cs" />
+    <Compile Include="Services\IPeopleRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
